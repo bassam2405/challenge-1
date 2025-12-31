@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+int main (){
+    int mood;
+    cout << "select your mood (1-4) " << endl;
+    cout << "1 happy , 2 stressed , 3 heartbroken ,4 chill/party" << endl;
+    cin>> mood ;
+    if (mood == 1 )
+    {
+        cout<< "---joyful nasheeds---" <<endl;
+        cout<< "1. my dream - (1:17)" <<endl;
+        cout<< "2. wedding nasheed - (2:45)" <<endl;
+        cout<< "3. my mother - (1:42)" << endl;
+        cout<< "4. the beauty of existence - (4:20)" <<endl;
+        cout<< "5. murujan - (3:16)" <<endl;
+    
+    }
+    if(mood == 2)
+    {
+        cout<< "---neffex motivation songs---" << endl;
+        cout<< "1. neffex cold (3:06)" <<endl;
+        cout<< "2. neefex grateful (3:02)" <<endl;
+        cout<< "3. neffex life (2:08)" <<endl;
+        cout<< "4. neffex best of me (3:47)" <<endl;
+        cout<< "5. neffex crown (3:55)" <<endl;
+        
+    }
+    if(mood == 3)
+    {
+        cout << "---heartbroken songs---" << endl;
+        cout<< "1. (:)" <<endl;
+        cout<< "2. (:)" <<endl;
+        cout<< "3. (:)" <<endl;
+        cout<< "4. (:)" <<endl;
+        cout<< "5. (:)" <<endl;
+    }
+    if (mood == 4 )
+    {
+        cout << "---party songs bolloywood---" << endl;
+        cout<< "1. kala chashma (3:07)" <<endl;
+        cout<< "2. make some noise for the desi boyz (4:05)" <<endl;
+        cout<< "3. dj waley babu (2:49)" <<endl;
+        cout<< "4. aaj ki party (3:09)" <<endl;
+    }
+    return 0;
+    } 
