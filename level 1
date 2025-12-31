@@ -28,11 +28,13 @@ int main (){
     if(mood == 3)
     {
         cout << "---heartbroken songs---" << endl;
-        cout<< "1. (:)" <<endl;
-        cout<< "2. (:)" <<endl;
-        cout<< "3. (:)" <<endl;
-        cout<< "4. (:)" <<endl;
-        cout<< "5. (:)" <<endl;
+        cout<< "1. tera mera rishta(5:47)" <<endl;
+        cout<< "2. tujhe sochta hoon(5:14)" <<endl;
+        cout<< "3. toh phir aao(5:48)" <<endl;
+        cout<< "4. mat aazma re(4:08)" <<endl;
+        cout<< "5. hale dil(5:47)" <<endl;
+        cout<< "6. teri yaadon mein(4:44)" <<endl;
+        cout<< "7. ilzaam(4:07)" <<endl;
     }
     if (mood == 4 )
     {
