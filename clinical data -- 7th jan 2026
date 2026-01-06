@@ -1,0 +1,17 @@
+while True:
+    name = input("Enter your name : ")
+    age = input("Enter your age :")
+    HR = input("Enter your heart rate :")
+    city = input("Enter your city : ")
+
+    heading = "clinical data records"
+    h = heading.upper().center(50)
+
+    print(f"\n{h}")
+    print(f"Patient name : {name.title()}")
+    print(f"Age : {age}")
+    print(f"Heart rate : {HR}")
+    print(f"City : {city.upper()}")
+
+    print("Note : This record is for data entry only.".center(50))
+    print()
