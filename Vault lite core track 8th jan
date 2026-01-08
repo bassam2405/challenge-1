@@ -26,7 +26,7 @@ while True:
     print("d.Exit")
 
     #taking input from user
-    choice = input("Enter a choice from above options: ")
+    choice = input("\nEnter a choice from above options: ")
     
     if choice == "a":
         if not vault:
@@ -50,8 +50,9 @@ while True:
               user_name = "Unknown"
 
              print(f"{site_name:<15} {user_name:<15} {pas}")
-
+        print()     
     elif choice == "b":
+        print()
         website = input("site: ")
         username = input("username: ")
         password = input("password: ")
@@ -67,7 +68,9 @@ while True:
         print(s)
     
     elif choice == "c":
+       print()
        if not vault:
+          print()
           n = "No credentials found"
           print("n.center(40)")
        else:
@@ -79,7 +82,8 @@ while True:
            clean_name = k.replace("_","-")        
            print(i,'.',clean_name)
 
-          try:
+          try:  
+                print()
                 selection = int(input("Enter the serial number of credential to update its password : ")) - 1
             # -1 because python reads item number starting from o enumerate( --, start()) only changes its visual value
                 if 0 <= selection < len(webuser_list):
@@ -89,17 +93,19 @@ while True:
 
                  with open(file,"w") as f:
                     json.dump(vault,f)
-                 print("Password updated successfully")
+                 print("\nPassword updated successfully\n")
                 else:
-                 print("Please choose number from given choices")
+                 print("\nPlease choose number from given choices\n")
           except ValueError:
-                print("Please choose a --number-- from choices")
+                print("\nPlease choose a --number-- from choices\n")
 
     elif choice == "d":
        e = "Exiting vault lite"
+       print()
        print(e.center(40))
+       print()
        break
     else:
        i = "Invalid choice , please choose from given options only!"
-       print(f"{i.center(60)}")
+       print(f"\n{i.center(60)}\n")
        
