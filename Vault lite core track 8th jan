@@ -9,12 +9,12 @@ try:
 except FileNotFoundError:
     vault = {}
 
-#title of the file , centring it for better user viewing experience(BUSE)
+#title of the file , centring it for better user viewing experience(BUVE)
 heading = "VAULT LITE - file based credential managers"
 h = heading.upper().center(50)
 print(h)
 
-#skipping a line for(BUSE)
+#skipping a line for(BUVE)
 print()
 print() 
 
