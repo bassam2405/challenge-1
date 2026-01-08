@@ -2,7 +2,7 @@ import json
 
 file= "vault_data.json"
 
-#using try and error to avoid crash
+#using try and error to avoid crash if file not found
 try:
     with open(file,"r") as f:
         vault = json.load(f)
