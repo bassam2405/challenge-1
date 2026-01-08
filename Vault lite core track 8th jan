@@ -1,0 +1,105 @@
+import json
+
+file= "vault_data.json"
+
+#using try and error to avoid crash
+try:
+    with open(file,"r") as f:
+        vault = json.load(f)
+except FileNotFoundError:
+    vault = {}
+
+#title of the file , centring it for better user viewing experience(BUSE)
+heading = "VAULT LITE - file based credential managers"
+h = heading.upper().center(50)
+print(h)
+
+#skipping a line for(BUSE)
+print()
+print() 
+
+#using while loop for main menu
+while True:
+    print("a.View saved credentials")
+    print("b.Add new credentials")
+    print("c.Update a credential")
+    print("d.Exit")
+
+    #taking input from user
+    choice = input("Enter a choice from above options: ")
+    
+    if choice == "a":
+        if not vault:
+            print("\nNo credentials found.")
+        else:
+            sc = "Saved credentials"
+            #s = sc.center()
+            print(f"\n{sc.center(40)}\n")     
+            print(f"{'WEBSITE':<15} {'USERNAME':<15} {'PASSWORD'}")
+            print("=" * 45)
+
+            for webuser, pas in vault.items():
+             
+             #using try and error to avoid crash if _ is missing in webuser 
+         
+             try:
+              site_name, user_name = webuser.split('_', 1)
+        
+             except IndexError:
+              site_name = webuser
+              user_name = "Unknown"
+
+             print(f"{site_name:<15} {user_name:<15} {pas}")
+
+    elif choice == "b":
+        website = input("site: ")
+        username = input("username: ")
+        password = input("password: ")
+
+        webuser = f"{website}_{username}"
+        vault[webuser] = password
+
+        with open(file,"w") as f:
+           json.dump(vault,f)
+
+        cs = "Credentials saved succesfully"
+        s = cs.center(50)
+        print(s)
+    
+    elif choice == "c":
+       if not vault:
+          n = "No credentials found"
+          print("n.center(40)")
+       else:
+          #converting it to list to use index
+          webuser_list = list(vault.keys())
+
+          for i,k in enumerate(webuser_list, start=1):
+          #for BUEV using .replace()
+           clean_name = k.replace("_","-")        
+           print(i,'.',clean_name)
+
+          try:
+                selection = int(input("Enter the serial number of credential to update its password : ")) - 1
+            # -1 because python reads item number starting from o enumerate( --, start()) only changes its visual value
+                if 0 <= selection < len(webuser_list):
+                 slc_cred = webuser_list[selection]
+                 new_pass = input("Enter new password : ")
+                 vault[slc_cred] = new_pass
+
+                 with open(file,"w") as f:
+                    json.dump(vault,f)
+                 print("Password updated successfully")
+                else:
+                 print("Please choose number from given choices")
+          except ValueError:
+                print("Please choose a --number-- from choices")
+
+    elif choice == "d":
+       e = "Exiting vault lite"
+       print(e.center(40))
+       break
+    else:
+       i = "Invalid choice , please choose from given options only!"
+       print(f"{i.center(60)}")
+       
